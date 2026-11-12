@@ -156,6 +156,20 @@ namespace Arreglos.Logica
 
         }
 
+        //metodo par
+
+        private bool EsPar(int n)
+        {
+           
+                if (n % 2 == 0)
+                {
+                    return true;
+                }
+
+            return false;
+        }
+
+
         //Metodo Obtener Pares 
         public MiArreglo ObtenerPares()
         {
@@ -163,7 +177,7 @@ namespace Arreglos.Logica
             int contadorPares = 0;
             for (int i = 0; i < _tope; i++)
             {
-                if (_arreglo[i] % 2 == 0)
+                if (EsPar(_arreglo[i]))
                 {
                     contadorPares++;
                 }

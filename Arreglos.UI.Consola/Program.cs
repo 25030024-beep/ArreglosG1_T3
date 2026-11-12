@@ -9,35 +9,49 @@
 //Console.WriteLine("Operaciones de pila");
 
 //Console.WriteLine("Arreglo ");
-MiArreglo oMiArreglo = new MiArreglo(100);
+MiArreglo oMiArreglo = new MiArreglo(50000);
 
 
 try
 {
     Console.WriteLine("\nArreglo\n");
-	oMiArreglo.Llenar();
+    var tiempo1 = DateTime.Now;
+    oMiArreglo.Llenar(1, 999999);
     Console.WriteLine(oMiArreglo);
+    var tiempo2 = DateTime.Now;
+
+    var restaTiempo = tiempo2 - tiempo1;
+
+    Console.WriteLine($"\nTiempo transcurrido: {restaTiempo.Minutes} minutos, {restaTiempo.Seconds} segundos, {restaTiempo.Milliseconds} milisegundos, {restaTiempo.Nanoseconds} nanosegundos");
     Console.ReadKey();
 
-    Console.WriteLine("\nPares\n");
-    var verPares = oMiArreglo.ObtenerPares();
-    Console.WriteLine(verPares);
-    Console.ReadKey();
+    //Console.WriteLine("\nPares\n");
+    //var verPares = oMiArreglo.ObtenerPares();
+    //Console.WriteLine(verPares);
+    //Console.ReadKey();
 
-    Console.WriteLine("\nPares Ordenados\n");
-    verPares.Ordenar();
-    Console.WriteLine(verPares);
-    Console.ReadKey();
+    //Console.WriteLine("\nPares Ordenados\n");
+    //verPares.Ordenar();
+    //Console.WriteLine(verPares);
+    //Console.ReadKey();
 
     Console.WriteLine("\nPrimos\n");
+    var tiempop1 = DateTime.Now;
     var verPrimos = oMiArreglo.ObtenerPrimos();
     Console.WriteLine(verPrimos);
+    var tiempop2 = DateTime.Now;
+    var restaTiempop = tiempop2 - tiempop1;
+    Console.WriteLine($"\nTiempo transcurrido: {restaTiempop.Minutes} minutos, {restaTiempop.Seconds} segundos, {restaTiempop.Milliseconds} milisegundos, {restaTiempop.Nanoseconds} nanosegundos");
     Console.ReadKey();
 
     Console.WriteLine("\nPrimos Ordenados\n");
+    var tiempopo1 = DateTime.Now;
     verPrimos.Ordenar();
-    Console.ReadKey();
     Console.WriteLine(verPrimos);
+    var tiempopo2 = DateTime.Now;
+    var restaTiempopo = tiempopo2 - tiempopo1;
+    Console.WriteLine($"\nTiempo transcurrido: {restaTiempopo.Minutes} minutos, {restaTiempopo.Seconds} segundos, {restaTiempopo.Milliseconds} milisegundos, {restaTiempopo.Nanoseconds} nanosegundos");
+    Console.ReadKey();
 
 }
 catch (Exception ex)
